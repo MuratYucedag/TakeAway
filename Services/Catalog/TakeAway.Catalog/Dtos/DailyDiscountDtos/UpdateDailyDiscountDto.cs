@@ -1,12 +1,7 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
-
-namespace TakeAway.Catalog.Entities
+﻿namespace TakeAway.Catalog.Dtos.DailyDiscountDtos
 {
-    public class DailyDiscount
+    public class UpdateDailyDiscountDto
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
         public string DailyDiscountId { get; set; }
         public string MailTitle { get; set; }
         public string SubTitle { get; set; }

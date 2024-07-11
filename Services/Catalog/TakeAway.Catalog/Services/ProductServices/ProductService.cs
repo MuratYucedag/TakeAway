@@ -18,7 +18,7 @@ namespace TakeAway.Catalog.Services.ProductServices
             _mapper = mapper;
         }
         public async Task CreateProductAsync(CreateProductDto createProductDto)
-        {
+        {   
             var value = _mapper.Map<Product>(createProductDto);
             await _productCollection.InsertOneAsync(value);
         }

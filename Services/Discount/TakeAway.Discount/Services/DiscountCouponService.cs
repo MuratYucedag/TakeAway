@@ -31,9 +31,14 @@ namespace TakeAway.Discount.Services
             await connection.ExecuteAsync(query, parameters);
         }
 
-        public GetByIdDiscountCouponDto GetByIdDiscountCouponAsync(int id)
+        public async Task<GetByIdDiscountCouponDto> GetByIdDiscountCouponAsync(int id)
         {
-            throw new NotImplementedException();
+            string query = "Select * From Coupons Where couponId=@couponId";
+            var parameters = new DynamicParameters();
+            parameters.Add("@couponId", id);
+            var connection = _context.CreateConnection();
+            var value = await connection.QueryFirstOrDefaultAsync<GetByIdDiscountCouponDto>(query, parameters);
+            return value;
         }
 
         public async Task<List<ResultDiscountCouponDto>> ResultDiscountCouponAsync()
@@ -44,9 +49,16 @@ namespace TakeAway.Discount.Services
             return values.ToList();
         }
 
-        public Task UpdateDiscountCouponAsync(UpdateDiscountCouponDto updateDiscountCouponDto)
+        public async Task UpdateDiscountCouponAsync(UpdateDiscountCouponDto updateDiscountCouponDto)
         {
-            throw new NotImplementedException();
+            string query = "Update Coupons Set Code=@code,Rate=@rate,IsActive=@isActive Where CouponId=@couponId";
+            var parameters = new DynamicParameters();
+            parameters.Add("@rate", updateDiscountCouponDto.Rate);
+            parameters.Add("@isActive", updateDiscountCouponDto.IsActive);
+            parameters.Add("@code", updateDiscountCouponDto.Code);
+            parameters.Add("@couponId", updateDiscountCouponDto.CouponId);
+            var connection = _context.CreateConnection();
+            await connection.ExecuteAsync(query, parameters);
         }
     }
 }

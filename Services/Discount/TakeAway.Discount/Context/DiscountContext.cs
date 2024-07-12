@@ -16,11 +16,6 @@ namespace TakeAway.Discount.Context
             _connectionString = _configuration.GetConnectionString("DefaultConnection");
         }
         public IDbConnection CreateConnection() => new SqlConnection(_connectionString);
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-R7AR1ND;initial Catalog=TakeAwayDiscountDb;integrated Security=true");
-        }
         public DbSet<Coupon> Coupons { get; set; }
     }
 }

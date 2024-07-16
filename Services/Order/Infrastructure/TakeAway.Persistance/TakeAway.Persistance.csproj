@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\TakeAway.Application\TakeAway.Application.csproj" />
     <ProjectReference Include="..\..\Core\TakeAway.Domain\TakeAway.Domain.csproj" />
   </ItemGroup>
 

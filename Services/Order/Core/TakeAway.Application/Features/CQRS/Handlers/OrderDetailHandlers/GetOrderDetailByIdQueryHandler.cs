@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TakeAway.Application.Features.CQRS.Queries.OrderDetailQueries;
-using TakeAway.Application.Features.CQRS.Results.AddressResults;
 using TakeAway.Application.Features.CQRS.Results.OrderDetailResults;
 using TakeAway.Application.Interfaces;
 using TakeAway.Domain.Entities;
@@ -34,3 +33,10 @@ namespace TakeAway.Application.Features.CQRS.Handlers.OrderDetailHandlers
         }
     }
 }
+/*
+Hotel Api Kursu
+Traversal
+SignalR Restoran
+CarBook
+Mikroservis
+ */
